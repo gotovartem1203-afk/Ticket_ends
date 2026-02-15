@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Search Support</title>
+    <link rel="stylesheet" href="support.css">
+    <link rel="stylesheet" href="../auto.css">
+    <script src="../auto.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Ticket Search</h1>
+                    <p>Поиск и бронирование билетов на поезд</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Главная страница</a></li>
+                    <li><a href="search/seacrh.html">Поиск билетов</a></li>
+                    <li><a href="news/novostu.html">Новости</a></li>
+                    <li><a href="o_nas/o_nas.html">О нас</a></li>
+                </ul>
+            </nav>
+           <div class="auth-buttons" id="authBlock">
+            <button class="btn-login" id="loginBtn">Войти</button>
+            <button class="btn-register" id="regBtn">Регистрация</button>
+        </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="help-main">
+        <div class="container">
+            <h1 class="help-title">Центр помощи</h1>
+            <p class="help-subtitle">Мы здесь, чтобы помочь вам с любыми вопросами</p>
+
+            <!-- Блок поиска помощи -->
+            <section class="help-search">
+                <div class="search-container">
+                    <input type="text" placeholder="Введите ваш вопрос..." class="help-search-input">
+                    <button class="help-search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Разделы помощи -->
+            <section class="help-sections">
+                <div class="help-section">
+                    <div class="help-section-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Покупка билетов</h3>
+                    <p>Как выбрать и оплатить билеты, возврат и обмен</p>
+                    <a href="#" class="help-section-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="help-section">
+                    <div class="help-section-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Аккаунт</h3>
+                    <p>Регистрация, вход, управление профилем и настройки</p>
+                    <a href="#" class="help-section-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="help-section">
+                    <div class="help-section-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <h3>Поездка</h3>
+                    <p>Подготовка к поездке, багаж и правила перевозки</p>
+                    <a href="#" class="help-section-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="help-section">
+                    <div class="help-section-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Безопасность</h3>
+                    <p>Защита данных, безопасные платежи и конфиденциальность</p>
+                    <a href="#" class="help-section-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </section>
+
+            <!-- Часто задаваемые вопросы -->
+            <section class="faq-section">
+                <h2>Часто задаваемые вопросы</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Как купить жд билет?</span>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Для покупки билета перейдите на главную страницу и заполните форму поиска, выберите подходящий рейс и следуйте инструкциям системы оплаты.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Как вернуть или обменять билет?</span>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Возврат и обмен билетов возможен в личном кабинете в разделе "Мои билеты". Сроки и условия возврата зависят от тарифа и времени до отправления. Подробную информацию вы можете найти в правилах перевозки.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Что нужно, чтобы сесть в поезд?</span>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Для посадки необходим документ, удостоверяющий личность (паспорт), и электронный или бумажный билет.</p>
+                        </div>
+                     </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Какие способы оплаты доступны?</span>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Мы принимаем банковские карты Visa, Mastercard, Мир, а также электронные кошельки и интернет-банкинг. Все платежи защищены современными системами шифрования.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Как изменить данные пассажира?</span>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Изменение данных пассажира возможно до момента оформления билета. После оплаты изменение персональных данных может быть ограничено в зависимости от правил перевозчика.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Что делать, если я не получил электронный билет?</span>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Электронный билет обычно приходит в течение 15 минут после оплаты. Если вы не получили билет, проверьте папку "Спам" или свяжитесь с нашей службой поддержки.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Форма обратной связи -->
+            <section class="contact-section">
+                <h2>Свяжитесь с нами</h2>
+                <p class="contact-subtitle">Не нашли ответ на свой вопрос? Напишите нам, и мы поможем!</p>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Отправить сообщение</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Телефон</h3>
+                            <p>8 (123) 456-78-90</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>TicketSerchSupport@mail.ru</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Время работы</h3>
+                            <p>Круглосуточно, 7 дней в неделю</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TicketSearch</h3>
+                    <p>Лучший сервис для поиска и покупки ж/д билетов</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TicketSearch. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="support.js"></script>
+
+    <div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modalTitle">Вход</h2>
+        <form id="authForm">
+            <div id="regFields" style="display: none;">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="text" id="authName" placeholder="Имя" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="text" id="authLastName" placeholder="Фамилия" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="email" id="authEmail" placeholder="Email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="password" id="authPassword" placeholder="Пароль" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            
+            <button type="submit" class="search-btn" id="submitAuth" style="width: 100%;">Войти</button>
+            <div id="googleBtnContainer" style="display: none; margin-top: 15px; justify-content: center;"></div>
+        </form>
+        <p id="toggleAuth" style="text-align: center; margin-top: 15px; cursor: pointer; color: #1a237e; text-decoration: underline;">
+            Нет аккаунта? Зарегистрироваться
+        </p>
+    </div>
+</div>
+</body>
+</html>
