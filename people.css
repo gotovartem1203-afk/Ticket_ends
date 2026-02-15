@@ -1,0 +1,706 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Шапка */
+.header {
+    background-color: #1a237e;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 1.5rem;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+    color: #ffc107;
+}
+
+.auth-buttons button {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 30px;
+}
+
+.auth-buttons .btn-login:hover {
+    background: white;
+    color: #1a237e;
+}
+
+.auth-buttons .btn-register:hover {
+    background: white;
+    color: #1a237e;
+}
+
+/* Основной контент личного кабинета */
+.profile-main {
+    padding: 40px 0 80px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-header h1 {
+    font-size: 36px;
+    color: #1a237e;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.profile-header .profile-subtitle {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Боковая панель */
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user-info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #1a237e, #303f9f);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+}
+
+.user-details h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.user-details p {
+    color: #666;
+    font-size: 14px;
+}
+
+.user-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-item i {
+    font-size: 24px;
+    color: #1a237e;
+    margin-bottom: 8px;
+}
+
+.stat-item span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.stat-item small {
+    color: #666;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* Навигация боковой панели */
+.sidebar-nav ul {
+    list-style: none;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.sidebar-nav li {
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-nav li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-nav li.active {
+    background: #f5f7ff;
+}
+
+.sidebar-nav li.active a {
+    color: #1a237e;
+    font-weight: 600;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: #444;
+    transition: all 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background: #f8f9fa;
+    color: #1a237e;
+}
+
+.sidebar-nav i {
+    width: 24px;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.sidebar-nav .badge {
+    background: #ff6f00;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.logout-item a {
+    color: #e53935 !important;
+}
+
+/* Основная область */
+.profile-main-area {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.tab-header h2 {
+    font-size: 24px;
+    color: #1a237e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Список билетов - новый стиль как на изображении */
+.tickets-list {
+    min-height: 300px;
+}
+
+.no-tickets {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.no-tickets i {
+    font-size: 60px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.no-tickets h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.btn-find-tickets {
+    display: inline-block;
+    background: #1a237e;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin: 20px auto 0;
+}
+
+.btn-find-tickets:hover {
+    background: #303f9f;
+}
+
+/* Стили для карточек билетов как на изображении */
+.ticket-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ticket-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.ticket-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #1a237e, #303f9f);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-destination {
+    flex: 1;
+}
+
+.ticket-destination h3 {
+    font-size: 22px;
+    color: #1a237e;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticket-date {
+    font-size: 16px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticket-date i {
+    color: #1a237e;
+}
+
+.ticket-price {
+    text-align: right;
+}
+
+.ticket-price .price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.ticket-price .paid {
+    color: #27ae60;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.ticket-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .ticket-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ticket-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.ticket-info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.ticket-info-row:last-child {
+    margin-bottom: 0;
+}
+
+.ticket-info-label {
+    color: #666;
+    font-size: 14px;
+}
+
+.ticket-info-value {
+    font-weight: 600;
+    color: #333;
+}
+
+.ticket-number {
+    font-size: 18px;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.ticket-type {
+    color: #666;
+    font-size: 14px;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.ticket-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.status-paid {
+    color: #27ae60;
+}
+
+.status-pending {
+    color: #f39c12;
+}
+
+.status-cancelled {
+    color: #e74c3c;
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-ticket-action {
+    background: #f5f7fa;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-ticket-action:hover {
+    background: #e8eaf6;
+    border-color: #1a237e;
+    color: #1a237e;
+}
+
+.btn-ticket-action.download {
+    background: #1a237e;
+    color: white;
+    border-color: #1a237e;
+}
+
+.btn-ticket-action.download:hover {
+    background: #303f9f;
+}
+
+/* Альтернативный стиль билета (компактный) */
+.ticket-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 4px solid #1a237e;
+}
+
+.ticket-compact-left {
+    flex: 1;
+}
+
+.ticket-compact-left h4 {
+    font-size: 18px;
+    color: #1a237e;
+    margin-bottom: 5px;
+}
+
+.ticket-compact-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.ticket-compact-detail {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+.ticket-compact-detail i {
+    color: #1a237e;
+    font-size: 12px;
+}
+
+.ticket-compact-type {
+    font-size: 13px;
+    color: #666;
+}
+
+.ticket-compact-type strong {
+    color: #333;
+}
+
+.ticket-compact-right {
+    text-align: right;
+}
+
+.ticket-compact-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.ticket-compact-status {
+    color: #27ae60;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+/* Подвал */
+.footer {
+    background: #1a237e;
+    color: white;
+    padding: 2rem 0 1rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.footer-section p {
+    color: #ddd;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom p {
+    color: #ddd;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .profile-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-header h1 {
+        font-size: 28px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .tab-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .ticket-compact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .ticket-compact-right {
+        text-align: left;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav ul li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-buttons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+
+.btn-download {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-download:hover {
+    background: #0056b3;
+}

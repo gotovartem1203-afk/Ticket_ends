@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои билеты - TicketSearch</title>
+    <link rel="stylesheet" href="people.css">
+    <link rel="stylesheet" href="auto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Ticket Search</h1>
+                    <p>Поиск и бронирование билетов на поезд</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="search/seacrh.html">Поиск билетов</a></li>
+                    <li><a href="news/novostu.html">Новости</a></li>
+                    <li><a href="o_nas/o_nas.html">О нас</a></li>
+                    <li><a href="support/support.html">Поддержка</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons" id="authBlock">
+                </div>
+        </div>
+    </header>
+
+    <main class="profile-main">
+        <div class="container">
+            <div class="profile-header">
+                <h1><i class="fas fa-ticket-alt"></i> Мои билеты</h1>
+                <p class="profile-subtitle">Здесь отображаются все ваши поездки</p>
+            </div>
+
+            <div class="profile-content">
+                <section class="profile-main-area" style="width: 100%;">
+                    
+                    <div id="tickets-tab" class="tab-content active">
+                        <div class="tab-header">
+                            <h2>Список билетов</h2>
+                            
+                        </div>
+
+                        <div id="ticketsList" class="tickets-list">
+                            <div class="no-tickets">
+                                <i class="fas fa-ticket-alt"></i>
+                                <h3>У вас пока нет билетов</h3>
+                                <p>Найдите и купите билеты на поезд, и они появятся здесь</p>
+                                <a href="search/seacrh.html" class="btn-find-tickets">
+                                    <i class="fas fa-search"></i> Найти билеты
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TicketSearch</h3>
+                    <p>Лучший сервис для поиска и покупки ж/д билетов</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TicketSearch. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auto.js"></script>
+    <script src="people.js"></script>
+</body>
+</html>
