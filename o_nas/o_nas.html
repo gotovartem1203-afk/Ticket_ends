@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Ticket Search</title>
+    <link rel="stylesheet" href="o_nas.css">
+    <link rel="stylesheet" href="../auto.css">
+    <script src="../auto.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Ticket Search</h1>
+                    <p>Поиск и бронирование билетов на поезд</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Главная страница</a></li>
+                    <li><a href="search/seacrh.html">Поиск билетов</a></li>
+                    <li><a href="news/novostu.html">Новости</a></li>
+                    <li><a href="support/support.html">Поддержка</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons" id="authBlock">
+            <button class="btn-login" id="loginBtn">Войти</button>
+            <button class="btn-register" id="regBtn">Регистрация</button>
+        </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="about-main">
+        <div class="container">
+            <!-- Герой секция -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">О компании Ticket Search</h1>
+                    <p class="hero-subtitle">Мы делаем железнодорожные путешествия простыми и доступными для каждого</p>
+                </div>
+            </section>
+
+            <!-- О компании -->
+            <section class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Наша миссия</h2>
+                        <p>Ticket Search - это современный сервис по поиску и бронированию железнодорожных билетов. Мы стремимся сделать процесс планирования путешествий максимально удобным, быстрым и безопасным для наших пользователей.</p>
+
+                        <p>Основанная в 2025 году, наша компания объединила профессионалов в области IT и железнодорожных перевозок, чтобы создать сервис, который действительно понимает потребности путешественников.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500K+</div>
+                            <div class="stat-label">Довольных клиентов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2M+</div>
+                            <div class="stat-label">Проданных билетов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Поддержка</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Наши преимущества -->
+            <section class="features-section">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Мгновенное бронирование</h3>
+                        <p>Быстрое оформление билетов за несколько кликов без лишних сложностей</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Безопасные платежи</h3>
+                        <p>Все транзакции защищены современными системами шифрования данных</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Удобный интерфейс</h3>
+                        <p>Простой и интуитивно понятный дизайн для комфортного использования</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Круглосуточная поддержка</h3>
+                        <p>Наша служба заботы о клиентах всегда готова помочь вам</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h3>Скидки и акции</h3>
+                        <p>Постоянные скидки и специальные предложения для наших клиентов</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>Любые направления</h3>
+                        <p>Широкий выбор маршрутов по всей России и странам СНГ</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- QR-код для Telegram бота -->
+            <section class="qr-section">
+                <div class="qr-content">
+                    <div class="qr-text">
+                        <h2>Наш Telegram бот</h2>
+                        <p>Сканируйте QR-код, чтобы получить быстрый доступ к нашему боту в Telegram. Получайте уведомления о статусе поездок, специальные предложения и быструю помощь.</p>
+                        <ul class="qr-features">
+                            <li><i class="fas fa-check"></i> Уведомления о поездках</li>
+                            <li><i class="fas fa-check"></i> Быстрый поиск билетов</li>
+                            <li><i class="fas fa-check"></i> Специальные акции</li>
+                            <li><i class="fas fa-check"></i> Онлайн-поддержка</li>
+                        </ul>
+                    </div>
+                    <div class="qr-code">
+                        <img src="http://qrcoder.ru/code/?https%3A%2F%2Ft.me%2FTicket_Seacrh_bot&8&0" height="700" width="300" alt="QR-код для Telegram бота">
+                        <p class="qr-caption">Наведите камеру на QR-код</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Команда -->
+            <section class="team-section">
+                <h2 class="section-title">Наша команда</h2>
+                <div class="team-grid">
+                    <div id="team" class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Анна Иванова</h3>
+                        <p class="member-role">CEO & Основатель</p>
+                        <p class="member-bio">15 лет опыта в IT и транспортной логистике</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Петр Сидоров</h3>
+                        <p class="member-role">Технический директор</p>
+                        <p class="member-bio">Эксперт в области разработки высоконагруженных систем</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Мария Козлова</h3>
+                        <p class="member-role">Директор по клиентскому сервису</p>
+                        <p class="member-bio">Специалист с 10-летним опытом в обслуживании клиентов</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Контакты -->
+            <section class="contact-section">
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <div  id="info" class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Телефон</h3>
+                            <p>8 (123) 456-78-90</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>TicketSerchSupport@mail.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Время работы</h3>
+                            <p>Круглосуточно, 7 дней в неделю</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TicketSearch</h3>
+                    <p>Лучший сервис для поиска и покупки ж/д билетов</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TicketSearch. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="o_nas.js"></script>
+
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modalTitle">Вход</h2>
+        <form id="authForm">
+            <div id="regFields" style="display: none;">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="text" id="authName" placeholder="Имя" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="text" id="authLastName" placeholder="Фамилия" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="email" id="authEmail" placeholder="Email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="password" id="authPassword" placeholder="Пароль" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            
+            <button type="submit" class="search-btn" id="submitAuth" style="width: 100%;">Войти</button>
+            <div id="googleBtnContainer" style="display: none; margin-top: 15px; justify-content: center;"></div>
+        </form>
+        <p id="toggleAuth" style="text-align: center; margin-top: 15px; cursor: pointer; color: #1a237e; text-decoration: underline;">
+            Нет аккаунта? Зарегистрироваться
+        </p>
+    </div>
+</div>    
+</body>
+</html>
