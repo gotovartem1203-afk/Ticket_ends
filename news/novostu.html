@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Новости железной дороги</title>
+    <link rel="stylesheet" href="novostu.css">
+    <link rel="stylesheet" href="../auto.css">
+    <script src="../auto.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <!-- Шапка -->
+    <header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="../index.html">
+                <h1>Ticket Search</h1>
+                <p>Поиск и бронирование билетов на поезд</p>
+            </a>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="../index.html">Главная страница</a></li>
+                <li><a href="search/seacrh.html">Поиск билетов</a></li>
+                <li><a href="o_nas/o_nas.html">О нас</a></li>
+                <li><a href="support/support.html" >Поддержка</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons" id="authBlock">
+            <button class="btn-login" id="loginBtn">Войти</button>
+            <button class="btn-register" id="regBtn">Регистрация</button>
+        </div>
+    </div>
+</header>
+
+
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Последние новости -->
+        <section class="latest-news">
+            <div class="container">
+                <div class="news-header">
+                    <h2 class="section-title">Последние новости</h2>
+                </div>
+
+                <div class="news-grid">
+                    <article class="news-card">
+                        <a href="card_novostu1.html">
+                        <div class="news-image">
+                            <img src="https://www.mos.ru/upload/newsfeed/news/8ccd1ba7b2507c18ed227866858c3218/B-1UgQMx6uBd.jpg" alt="Реконструкция вокзала">
+                            <div class="news-badge">Инфраструктура</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Реконструкция Ленинградского вокзала в Москве</h3>
+                            <p class="news-excerpt">Историческую часть здания вокзала сохранят и отремонтируют. Ключевые изменения коснутся внутреннего пространства — вокзал станет современным и удобным для всех категорий пассажиров.</p>
+                            <div class="news-meta">
+                                <span class="news-date"><i class="far fa-calendar"></i> 12 марта 2025</span>
+                                <span class="news-views"><i class="far fa-eye"></i> 1.2K</span>
+                            </div>
+                            <a href="card_novostu1.html" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        </a>
+                    </article>
+
+                    <article class="news-card">
+                         <a href="card_novostu2.html">
+                        <div class="news-image">
+                            <img src="https://rusbiletnapoezd.ru/tickets/uploads/filemanager/New_security_system_has_reduced_the_number_of_emergencies_on_the_railway_1.jpg" alt="Система безопасности">
+                            <div class="news-badge">Безопасность</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Новая система безопасности на железных дорогах</h3>
+                            <p class="news-excerpt">Российские железные дороги вступили в новую эру безопасности благодаря внедрению передовых технологических решений.
+                                За последний год количество чрезвычайных происшествий на железнодорожном транспорте сократилось на 40%, что стало результатом масштабной модернизации систем контроля и мониторинга.</p>
+                            <div class="news-meta">
+                                <span class="news-date"><i class="far fa-calendar"></i> 11 декабря 2024</span>
+                                <span class="news-views"><i class="far fa-eye"></i> 956</span>
+                            </div>
+                            <a href="card_novostu2.html" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        </a>
+                    </article>
+
+                    <article class="news-card">
+                        <a href="card_novostu3.html">
+                            <div class="news-image">
+                                <img src="https://zdmira.com/images/News-Images/2025/2025-02/n2503088.jpg#joomlaImage://local-images/News-Images/2025/2025-02/n2503088.jpg?width=1224&height=690" alt="Международные перевозки">
+                                <div class="news-badge">Международные</div>
+                            </div>
+                            <div class="news-content">
+                                <h3>Увеличение объемов международных грузоперевозок</h3>
+                                <p class="news-excerpt">В рамках развития коридора Россия — Монголия — Китай в 2024 г. завершено удлинение приемоотправочных путей на приграничных станциях Монголии и России, что позволило увеличить провозную способность пункта пропуска Наушки — Сухэ-Батор до 15 млн т в год. </p>
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="far fa-calendar"></i> 10 декабря 2024</span>
+                                    <span class="news-views"><i class="far fa-eye"></i> 1.5K</span>
+                                </div>
+                                <a href="card_novostu3.html" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="news-card">
+                        <a href="card_novostu4.html">
+                            <div class="news-image">
+                                <img src="https://rzddigital.ru/upload/sprint.editor/5af/v3es0cnxqmqot2isccth9cm1tt0rwqpz.jpg" alt="Цифровизация">
+                                <div class="news-badge">Технологии</div>
+                            </div>
+                            <div class="news-content">
+                                <h3>Мультиагентный ИИ в диспетчерском управлении движением поездов</h3>
+                                <p class="news-excerpt">Интеллектуальная система диспетчерского управления пропускной способностью и перевозочным процессом CTMS (Capacity and Traffic Management System) должна стать ключевым элементом...</p>
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="far fa-calendar"></i> 9 декабря 2024</span>
+                                    <span class="news-views"><i class="far fa-eye"></i> 2.1K</span>
+                                </div>
+                                <a href="card_novostu4.html" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </a>
+                    </article>
+
+                   
+
+                    <article class="news-card">
+                        <a href="card_novostu6.html">
+                            <div class="news-image">
+                                <img src="https://iy.kommersant.ru/Issues.photo/REGIONS/ROSTOV_Online/2025/06/19/KRD_001497_134559_1_t245_165419.webp" alt="Развитие станций">
+                                <div class="news-badge">Инфраструктура</div>
+                            </div>
+                            <div class="news-content">
+                                <h3>Развитие пригородных железнодорожных станций</h3>
+                                <p class="news-excerpt">В Ростовской области увеличена частота движения пригородных поездов, запущены новые маршруты электричек, частично обновлен подвижной состав...</p>
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="far fa-calendar"></i> 7 декабря 2024</span>
+                                    <span class="news-views"><i class="far fa-eye"></i> 1.1K</span>
+                                </div>
+                                <a href="card_novostu6.html" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                            </a>
+                    </article>
+
+                    <article class="news-card">
+                        <a href="card_novostu7.html">
+                            <div class="news-image">
+                                <img src="https://avatars.mds.yandex.net/i?id=9471217035c57782c9f95658dc3dfb66_l-7054219-images-thumbs&n=13" alt="Скоростной поезд Москва-Казань">
+                                <div class="news-badge">Скоростные перевозки</div>
+                            </div>
+                            <div class="news-content">
+                                <h3>Запуск скоростного движения Москва-Казань </h3>
+                                <p class="news-excerpt">По проекту АО «Скоростные магистрали», ВСМ соединит семь регионов России: Московскую, Владимирскую и нижегородскую области, Чувашию, Марий Эл и Татарстан.</p>
+                                <div class="news-meta">
+                                    <span class="news-date"><i class="far fa-calendar"></i> 15 марта 2025</span>
+                                    <span class="news-views"><i class="far fa-eye"></i> 2.4K</span>
+                                </div>
+                                <a href="card_novostu7.html" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TicketSearch</h3>
+                    <p>Лучший сервис для поиска и покупки ж/д билетов</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TicketSearch. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modalTitle">Вход</h2>
+        <form id="authForm">
+            <div id="regFields" style="display: none;">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="text" id="authName" placeholder="Имя" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="text" id="authLastName" placeholder="Фамилия" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="email" id="authEmail" placeholder="Email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="password" id="authPassword" placeholder="Пароль" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            
+            <button type="submit" class="search-btn" id="submitAuth" style="width: 100%;">Войти</button>
+            <div id="googleBtnContainer" style="display: none; margin-top: 15px; justify-content: center;"></div>
+        </form>
+        <p id="toggleAuth" style="text-align: center; margin-top: 15px; cursor: pointer; color: #1a237e; text-decoration: underline;">
+            Нет аккаунта? Зарегистрироваться
+        </p>
+    </div>
+</div>    
+</body>
+</html>
