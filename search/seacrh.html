@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты поиска - Ticket Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="../auto.css">
+    <script src="../auto.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Ticket Search</h1>
+                    <p>Поиск и бронирование билетов на поезд</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Главная страница</a></li>
+                    <li><a href="news/novostu.html">Новости</a></li>
+                    <li><a href="o_nas/o_nas.html">О нас</a></li>
+                    <li><a href="support/support.html">Поддержка</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons" id="authBlock">
+                <button class="btn-login" id="loginBtn">Войти</button>
+                <button class="btn-register" id="regBtn">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="search-section">
+        <div class="container">
+            <h1>Поиск ж/д билетов</h1>
+            <div class="search-form">
+                <div class="form-group" style="position: relative;">
+                    <label>Откуда</label>
+                    <input type="text" id="from" placeholder="Например: Москва" autocomplete="off">
+                    <div id="from-suggestions" class="suggestions-container"></div>
+                </div>
+                <div class="form-group" style="position: relative;">
+                    <label>Куда</label>
+                    <input type="text" id="to" placeholder="Например: Казань" autocomplete="off">
+                    <div id="to-suggestions" class="suggestions-container"></div>
+                </div>
+                <div class="form-group">
+                    <label>Дата</label>
+                    <input type="date" id="date">
+                </div>
+                <button onclick="findTickets()" class="search-btn">Найти билеты🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="results-main">
+        <div class="container">
+            <div class="results-header">
+                <h2>Результаты поиска</h2>
+                <div class="sorting-options">
+                    <label>Сортировать:</label>
+                    <select id="sortTickets" onchange="applySortAndRender()">
+                        <option value="default">По умолчанию</option>
+                        <option value="cheap">Сначала дешевые</option>
+                        <option value="expensive">Сначала дорогие</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="results" class="tickets-container" style="position: relative; min-height: 300px;">
+
+                <div id="loader-overlay" class="loader-overlay" style="display: none;">
+                    <div class="loader-content">
+                        <div class="train-animation">
+                            <i class="fas fa-train"></i>
+                            <div class="track"></div>
+                        </div>
+                        <p>Ищем лучшие предложения...</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TicketSearch</h3>
+                    <p>Лучший сервис для поиска и покупки ж/д билетов</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TicketSearch. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content1">
+             <span class="close-modal" onclick="closeModal('bookingModal')">&times;</span>
+            <h2>Оформление билета</h2>
+            <div id="modalTicketInfo"></div>
+
+            <form class="booking-form" id="bookingForm" onsubmit="confirmBooking(event)">
+                <div class="form-group">
+                    <label>ФИО Пассажира</label>
+                    <input type="text" id="pass-fio" required placeholder="Иванов Иван Иванович">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Серия паспорта</label>
+                        <input type="text" id="pass-series" required placeholder="1234" maxlength="4" pattern="[0-9]{4}">
+                    </div>
+                    <div class="form-group">
+                        <label>Номер паспорта</label>
+                        <input type="text" id="pass-doc" required placeholder="567890" maxlength="6" pattern="[0-9]{6}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Электронная почта</label>
+                    <input type="email" id="pass-email" required placeholder="example@mail.ru">
+                    <small id="emailError" style="color:red; display:none;">Некорректный формат почты</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Способ оплаты</label>
+                    <select id="payment-method" required>
+                        <option value="card">Банковская карта</option>
+                        <option value="sbp">СБП (Система быстрых платежей)</option>
+                        <option value="wallet">Электронный кошелек</option>
+                    </select>
+                </div>
+
+                <div style="background-color: #fff9c4; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 5px solid #fbc02d; font-size: 14px; color: #333;">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    <strong>Примечание:</strong> Чтобы ваши билеты сохранялись в личном профиле, необходимо <span style="text-decoration: underline;">авторизоваться</span> перед покупкой.
+                </div>
+
+                <button type="submit" class="btn-buy">Оплатить и получить билет</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+           <span class="close-modal" onclick="closeModal('authModal')">&times;</span>
+            <h2 id="modalTitle">Вход</h2>
+            <form id="authForm">
+                <div id="regFields" style="display: none;">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <input type="text" id="authName" placeholder="Имя" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <input type="text" id="authLastName" placeholder="Фамилия" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="email" id="authEmail" placeholder="Email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <input type="password" id="authPassword" placeholder="Пароль" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+
+                <button type="submit" class="search-btn" id="submitAuth" style="width: 100%;">Войти</button>
+                <div id="googleBtnContainer" style="display: none; margin-top: 15px; justify-content: center;"></div>
+            </form>
+            <p id="toggleAuth" style="text-align: center; margin-top: 15px; cursor: pointer; color: #1a237e; text-decoration: underline;">
+                Нет аккаунта? Зарегистрироваться
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
